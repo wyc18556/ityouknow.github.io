@@ -61,23 +61,23 @@ navs:
     label: Home
 
   -
-    href: /spring-boot.html
+    href: /
     label: Spring-Boot
 
   -
-    href: /spring-cloud.html
+    href: /
     label: Spring-Cloud
 
   -
-    href: /archives.html
+    href: /
     label: Archives
 
   -
-    href: /link.html
+    href: /
     label: Link
 
   -
-    href: /about.html
+    href: /
     label: About
 
 
@@ -85,52 +85,52 @@ navs:
 labels:
 
   -
-    href: /share/2017/10/01/resource-sharing.html
+    href: /
     name: 资源
 
   -
-    href: /life.html
+    href: /
     name: 故事
 
   -
-    href: /arch.html
+    href: /
     name: 架构
     
   -
-    href: /jvm.html
+    href: /
     name: Jvm
 
   -
-    href: /fastdfs.html
+    href: /
     name: FastDFS
 
   -
-    href: /mongodb.html
+    href: /
     name: MongoDB
 
   -
-    href: /docker.html
+    href: /
     name: Docker
 
   -
-    href: /open-source.html
+    href: /
     name: Code   
 
 # selected articles
 classes:
 
   -
-    href: /life.html
+    href: /
     name: 我的故事
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /arch.html
+    href: /
     name: 架构师之路
     describe: 一个架构师的自我修养
 
   -
-    href: /jvm.html
+    href: /
     name: Jvm系列文章
     describe: Java之根基，Java程序员必学
 

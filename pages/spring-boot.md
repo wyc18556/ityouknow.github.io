@@ -2,11 +2,9 @@
 layout: page
 title: Spring Boot 系列文章
 titlebar: spring-boot
-<!--
 subtitle: <span class="mega-octicon octicon-cloud-download"></span>&nbsp;&nbsp;
      <a href ="https://github.com/ityouknow/spring-boot-leaning">更多 Spring Boot 2.0 精选课程 ， <font color="#EB9439">点我</font>查看！</a><br/>
      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
--->
 menu: spring-boot
 css: ['blog-page.css']
 permalink: /spring-boot
