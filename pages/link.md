@@ -11,11 +11,12 @@ permalink: /link
 ## 友情链接
 
 - [匠心零度博客](http://www.jiangxinlingdu.com/) - 以匠心，铸非凡！
+- [纯洁大佬的博客](http://www.ityouknow.com//) - 本人博客fork自该博客.
 - [麦田技术博客](http://blog.itmyhome.com/) - 将来的你，一定会感激现在拼命努力的自己。 
 - [王登科-DK博客](http://www.wdk.pw) - 一个技术创业者  
 - [架构师小密圈](http://www.3xmq.com/) - 架构师的小圈子  
 - [spring4all](http://spring4all.com/) - Spring For All 垂直技术社区  
-- [猿天地](http://cxytiandi.com/) - 天地是一个综合性的网站,以程序猿用户为主,提供各种开发相关的内容。     
+- [猿天地](http://cxytiandi.com/) - 天地是一个综合性的网站,以程序猿用户为主,提供各种开发相关的内容
 - [rickiyeat的博客](http://blog.csdn.net/rickiyeat) - hadoop、spring boot/cloud技术博客   
 - [丑胖侠的技术生涯](http://blog.csdn.net/wo541075754) - 每一步成长都想与你分享    
 - [梁桂钊的博客](http://blog.720ui.com/) - 后端攻城狮
@@ -41,19 +42,15 @@ permalink: /link
 
 ## 个人链接
 
-- [ityouknow](http://www.ityouknow.com/) - 个人独立博客
-- [github](https://github.com/ityouknow) -  我分享代码的地方
-- [微博](http://weibo.com/ityouknow) -  我的微博
-- [知乎](https://www.zhihu.com/people/ityouknow) - 个人知乎地址，用的不太多大多数都在潜水
-- [博客园](https://www.cnblogs.com/ityouknow/) - 博客园个人博客，最开始写博客的地方
-- [CSDN](http://blog.csdn.net/ityouknow)  - 最开始写博客的地方
-- [51CTO](http://blog.51cto.com/ityouknow) - 51Cto地址，虽然一直没有用过
+- [wyc1856](http://blog.wyc1856.club/) - 个人独立博客
+- [github](https://github.com/wyc18556) - 以后分享代码的地方
+- [coding](https://coding.net/u/wyc1856) - 在学校时用的代码仓库
 
 ## 其它  
 
 *需要展示你的网站，就在本页下面留言吧，也算是一种宣传方式。格式要求如下：*
 
-- 网站名称：ityouknow  
-- 网站链接：http://www.ityouknow.com  
+- 网站名称：wyc1856  
+- 网站链接：http://blog.wyc1856.club  
 - 网站描述：neo 的个人博客，分享技术，分享生活  
 

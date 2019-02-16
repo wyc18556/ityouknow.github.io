@@ -61,11 +61,11 @@ navs:
     label: Home
 
   -
-    href: /
+    href: /spring-boot.html
     label: Spring-Boot
 
   -
-    href: /
+    href: /spring-cloud.html
     label: Spring-Cloud
 
   -
@@ -73,11 +73,11 @@ navs:
     label: Archives
 
   -
-    href: /
+    href: /link.html
     label: Link
 
   -
-    href: /
+    href: /about.html
     label: About
 
 
@@ -120,17 +120,17 @@ labels:
 classes:
 
   -
-    href: /
+    href: /life.html
     name: 我的故事
     describe: 生活就是故事，故事就是生活
 
   -
     href: /
-    name: 架构师之路
-    describe: 一个架构师的自我修养
+    name: 自我进阶之路
+    describe: 一个Java Coder的学习与分享
 
   -
-    href: /
+    href: /jvm.html
     name: Jvm系列文章
     describe: Java之根基，Java程序员必学
 
@@ -141,7 +141,7 @@ classes:
 subscribe_rss: /feed.xml
 
 # Sidebar to show popular repo
-side_bar_repo_limit: 6 # Number of repos to show
+side_bar_repo_limit: 3 # Number of repos to show
 
 # Google Analytics
 # analytics :
@@ -152,7 +152,7 @@ side_bar_repo_limit: 6 # Number of repos to show
 
 # For about.html. Fell free to create your own!
 skill_software_keywords: [Java, MySQL, Oracle, Design Patterns]
-skill_j2ee_keywords: [Spring, Struct, Hibernet, MyBatis, JSP]
+skill_j2ee_keywords: [Spring, Spring Boot, Spring Cloud, MyBatis, Dubbo]
 skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, NodeJS, ExpressJS, MongoDB, Redis, PHP,  Boostrap]
 skill_mobile_app_keywords: [vuejs, hyhird app]
 
