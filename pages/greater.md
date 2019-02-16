@@ -2,7 +2,7 @@
 layout: page
 title: 进阶之路
 titlebar: greater
-subtitle: <span class="mega-octicon octicon-keyboard"></span>&nbsp;&nbsp; 记录一些比较深入的知识
+subtitle: <span class="mega-octicon octicon-thumbsup"></span>&nbsp;&nbsp; 记录一些比较深入的知识
 menu: greater
 css: ['blog-page.css']
 permalink: /greater
