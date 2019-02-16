@@ -7,7 +7,7 @@
 
 # Site settings
 title:  wyc1856
-subtitle: keep hunger,keep young.
+subtitle: keep hunger, keep young.
 name: wyc1856 
 email: wyc1856@qq.com
 description: Java后端技术、数据结构和算法知识、Spring Boot、Spring Cloud、微服务架构等相关知识学习与分享。
@@ -85,36 +85,24 @@ navs:
 labels:
 
   -
-    href: /
-    name: 资源
-
-  -
-    href: /
+    href: /life.html
     name: 故事
-
-  -
-    href: /
-    name: 架构
     
   -
-    href: /
+    href: /jvm.html
     name: Jvm
 
   -
-    href: /
-    name: FastDFS
+    href: /nosql.html
+    name: NoSql
 
   -
-    href: /
-    name: MongoDB
+    href: /mysql.html
+    name: MySql
 
   -
-    href: /
-    name: Docker
-
-  -
-    href: /
-    name: Code   
+    href: /code.html
+    name: Code
 
 # selected articles
 classes:
@@ -125,13 +113,13 @@ classes:
     describe: 生活就是故事，故事就是生活
 
   -
-    href: /
-    name: 自我进阶之路
+    href: /greater.html
+    name: 进阶之路
     describe: 一个Java Coder的学习与分享
 
   -
     href: /jvm.html
-    name: Jvm系列文章
+    name: Jvm系列
     describe: Java之根基，Java程序员必学
 
 
