@@ -1,3 +1,10 @@
+---
+layout: post
+title: 2019年计划
+category: life
+tags: [life]
+no-post-nav: true
+---
 # 2019年计划
 
 转眼间2019年已经过去了两个半月，是时候定下这未来一年的计划了

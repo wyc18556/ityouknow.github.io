@@ -2,7 +2,12 @@
 layout: page
 title: All articles are here
 titlebar: archives
-subtitle: <span class="mega-octicon octicon-calendar"></span>&nbsp;&nbsp;专题系列： &nbsp;&nbsp; <a href ="http://blog.wyc1856.club/base.html"><font color="#1A0DAB">基础</font></a>&nbsp;&nbsp; <a href ="http://blog.wyc1856.club/life.html"><font color="#EB9439">故事</font></a>&nbsp;&nbsp; <a href ="http://blog.wyc1856.club/jvm.html"><font color="#23527C">JVM</font></a>&nbsp;&nbsp; <a href ="http://blog.wyc1856.club/framework.html"><font color="#1E90FF">框架</font></a>
+subtitle: <span class="mega-octicon octicon-calendar"></span>&nbsp;&nbsp;专题系列： &nbsp;&nbsp; 
+<a href ="http://blog.wyc1856.club/base.html"><font color="#1A0DAB">基础</font></a>&nbsp;&nbsp; 
+<a href ="http://blog.wyc1856.club/life.html"><font color="#EB9439">故事</font></a>&nbsp;&nbsp; 
+<a href ="http://blog.wyc1856.club/jvm.html"><font color="#23527C">JVM</font></a>&nbsp;&nbsp; 
+<a href ="http://blog.wyc1856.club/framework.html"><font color="#1E90FF">框架</font></a>&nbsp;&nbsp; 
+<a href ="http://blog.wyc1856.club/other.html"><font color="#1E90FF">大杂烩</font></a>
 menu: archives
 css: ['blog-page.css']
 permalink: /archives.html
