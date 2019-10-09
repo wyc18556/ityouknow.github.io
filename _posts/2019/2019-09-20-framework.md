@@ -30,6 +30,7 @@ no-post-nav: true
 Spring指的是一个生态，它包含很多项目，比如Spring IOC、Spring AOP、Spring Secutity等，SpringMVC就是Spring众多框架中的一个，而Spring Boot是构建在Spring Framework之上的Boot启动器，旨在更容易的配置一个Spring项目。
 ### 如何统一引入 Spring Boot 版本？
 - 继承 spring-boot-starter-parent 项目。配置代码如下：
+
 ```sh
 <parent>
     <groupId>org.springframework.boot</groupId>
@@ -37,7 +38,9 @@ Spring指的是一个生态，它包含很多项目，比如Spring IOC、Spring 
     <version>1.5.1.RELEASE</version>
 </parent>
 ```
+
 - 导入 spring-boot-dependencies 项目依赖。配置代码如下：
+
 ```sh
 <dependencyManagement>
     <dependencies>
@@ -51,6 +54,7 @@ Spring指的是一个生态，它包含很多项目，比如Spring IOC、Spring 
     </dependencies>
 </dependencyManagement>
 ```
+
 ### 配置文件格式
 - .properties格式，spring项目中最常见的配置文件格式。
 - .yaml格式，可读性更强，分层结构更明显，不支持@ProperSource注解读取，可通过@Value注解替代。
@@ -120,10 +124,11 @@ Spring 框架的核心就是Spring IoC容器，容器创建Bean，将它们组�
 - 静态代理：指通过AOP框架提供的命令进行编译，有编译时编织（特殊编译器实现）、类加载时编织（特殊的类加载器实现）。
 - 动态代理：运行时在内存中“临时”生成AOP动态代理，有JDK动态代理（需实现至少一个接口，只能为接口方法提供增强）、CGLIB动态代理（使用继承方式实现，类不能被final修饰）
 #### Aspect使用流程
-1. __声明 point cut__ ，一个 point cut 由两部分组成：
+ __声明 point cut__ ，一个 point cut 由两部分组成：
 - 一个方法签名
 - 一个point cut 表达式，用来指定那些方法执行是我们感兴趣的。一个 point cut 表达式由标志符和操作参数组成。常用的标志符有：execution、within、bean、@annotation。
-2. __声明 advice__ ，常用的advice类型有：
+
+__声明 advice__ ，常用的advice类型有：
 - @Before，在 join point 方法之前执行
 - @AfterReturning，在 join point 方法正常返回退出后执行
 - @AfterThrowing，在 join point 方法抛出异常退出后执行
@@ -354,6 +359,7 @@ Dubbo通过CacheFilter过滤器，提供对结果缓存的功能，既可以适�
 - Segement：消息片段，一个Partition可以包含多个Segement。
 - ISR：In Sync Replicas（正在同步的集合），只有在 ISR 中的副本才能被拿来替代主副本。ISR = Leader + 没有落后太多的副本。
 - AR：副本全集，等于 ISR + OSR。
+
 #### 常用配置
 - acks：提供消息发送是否发送成功的可靠性保证，是写入leader分区完成就响应给producter成功，还是写入所有分区成功再响应。
 - replication.factor：给topic设置的参数，表示分区的副本数，一般这个值都要大于1。
@@ -362,7 +368,9 @@ Dubbo通过CacheFilter过滤器，提供对结果缓存的功能，既可以适�
 - linger.ms：配置生产者在发送请求之前等待时间，希望更多的消息填补到未满的批中。在低负载的情况下，设置此值大于0，以少量的延迟代价换取更少、更有效的请求。
 - buffer.memory：控制生产者可用的缓存总量，如果消息发送速度比其传输到服务器的快，将会耗尽这个缓存空间。当缓存空间耗尽，其他发送调用将被阻塞，阻塞时间的阈值通过max.block.ms设定，之后它将抛出一个TimeoutException。
 - min.insync.replicas；在kafka服务端设置的参数，表示ISR分区集合的最小值，一般都要大于1，这样保证leader挂了还有一个follower。
+
 #### Kafka会不会丢数据
+
 > Broker
 >> 比较常见的一种，leader分区的消息还没同步到replica分区，所在的Broker宕机了就会导致还未同步的消息丢失。可以通过给Topic设置replication.factor参数大于1，保证每个分区至少有两个副本。在kafka服务端设置min.insync.replicas参数大于1，保证leader分区感知到至少有一个follower还跟自己保持联系，没掉队。
 
@@ -380,10 +388,12 @@ Dubbo通过CacheFilter过滤器，提供对结果缓存的功能，既可以适�
 - 发生hash冲突时，Java7会在链表头部插入，Java8会在链表尾部插入。
 - 扩容后转移数据，Java7转移前后链表顺序会倒置（高并发场景下会导致死循环），Java8还是保持原来的顺序。
 - Java8中当链表长度大于8时会把链表转换成红黑树，寻址时间复杂度从O(N)变成O(log(N))，很大程度上提升了性能。
+
 ### ConcurrentHashMap
 Java 7中的ConcurrentHashMap的底层数据结构仍然是数组和链表。与HashMap不同的是，ConcurrentHashMap最外层不是一个大的数组，而是一个Segment的数组。每个Segment包含一个与HashMap数据结构差不多的链表数组。通过分段锁思想提高并发效率（有点类似LongAdder的做法）。整体数据结构如下图所示:
 ![Java7数据结构图](http://image.wyc1856.club/2019-08-22-14-08-04.png)
 ![Java7类图](http://image.wyc1856.club/2019-08-22-16-58-49.png)
+
 #### 初始化操作：
 入参:
 - initialCapacity(初始化容量，默认16)
@@ -408,11 +418,13 @@ get操作定位链表的方法和put一致，但是get方法没有加锁，原�
 
 Java 8为进一步提高并发性，摒弃了分段锁的方案，而是直接使用一个大的数组。同时为了提高哈希碰撞下的寻址性能，Java 8在链表长度超过一定阈值（8）时将链表（寻址时间复杂度为O(N)）转换为红黑树（寻址时间复杂度为O(log(N))）。其数据结构如下图所示：
 ![Java8数据结构图](http://image.wyc1856.club/2019-08-22-17-17-28.png)
+
 #### put操作
 如果key对应的数组元素(即链表表头或者树的根元素)为null，则通过CAS操作将其设置为当前值。否则对该元素使用sychronized关键字申请锁，然后进行操作。
 
 #### get操作
 由于数组被volatile关键字修饰，因此不用担心数组的可见性问题。对于数组元素(即链表表头或者树的根元素)的可见性由Unsafe的getObjectVolatile方法保证。同时Node实例的Key值和hash值都由final修饰，不可变更，无需关心它们被修改后的可见性问题。并且其value和对下一个元素的引用由volatile修饰，可见性也有保障。
+
 ```java
 static class Node<K,V> implements Map.Entry<K,V> {
   final int hash;
@@ -421,5 +433,6 @@ static class Node<K,V> implements Map.Entry<K,V> {
   volatile Node<K,V> next;
 }
 ```
+
 #### size操作
 put方法和remove方法都会通过addCount方法维护Map的size，维护方式类似LongAdder。size方法返回sumCount方法的值(baseCount累加cell.value)。
