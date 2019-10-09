@@ -30,7 +30,7 @@ no-post-nav: true
 Spring指的是一个生态，它包含很多项目，比如Spring IOC、Spring AOP、Spring Secutity等，SpringMVC就是Spring众多框架中的一个，而Spring Boot是构建在Spring Framework之上的Boot启动器，旨在更容易的配置一个Spring项目。
 ### 如何统一引入 Spring Boot 版本？
 - 继承 spring-boot-starter-parent 项目。配置代码如下：
-```java
+```sh
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -38,7 +38,7 @@ Spring指的是一个生态，它包含很多项目，比如Spring IOC、Spring 
 </parent>
 ```
 - 导入 spring-boot-dependencies 项目依赖。配置代码如下：
-```java
+```sh
 <dependencyManagement>
     <dependencies>
         <dependency>
@@ -139,6 +139,7 @@ Spring 框架的核心就是Spring IoC容器，容器创建Bean，将它们组�
 - 持久性（durability）：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。
 #### 事务的隔离级别
 不同数据库对事务隔离级别的支持和实现略有不同，在 TransactionDefinition 接口中定义如下:
+
 ```java
 
 // TransactionDefinition.java
