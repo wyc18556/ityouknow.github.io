@@ -140,6 +140,7 @@ Spring 框架的核心就是Spring IoC容器，容器创建Bean，将它们组�
 #### 事务的隔离级别
 不同数据库对事务隔离级别的支持和实现略有不同，在 TransactionDefinition 接口中定义如下:
 ```java
+
 // TransactionDefinition.java
 
 /**
@@ -170,9 +171,11 @@ int ISOLATION_REPEATABLE_READ = Connection.TRANSACTION_REPEATABLE_READ;
  */
 int ISOLATION_SERIALIZABLE = Connection.TRANSACTION_SERIALIZABLE;
 ```
+
 #### 事务的传播级别
 事务的传播级别，并不是数据库事务规范中的名词，而是 spring 自身所定义的。通过事务的传播级别，Spring 才知道如何处理事务，是创建一个新事务，还是继续使用当前事务，或者抛出异常。在 TransactionDefinition 接口中，定义了 __三类七种__ 传播级别，代码如下：
 ```java
+
 // TransactionDefinition.java
 
 // ========== 支持当前事务的情况 ========== 
