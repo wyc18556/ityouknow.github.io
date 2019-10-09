@@ -120,9 +120,11 @@ Spring 框架的核心就是Spring IoC容器，容器创建Bean，将它们组�
 - target:织入 advice 后所产生的代理类，也被称为 advised object
 
 总结：advice 是在 join point 上执行的, 而 point cut 规定了哪些 join point 可以执行哪些 advice。
+
 #### AOP织入的实现方式
 - 静态代理：指通过AOP框架提供的命令进行编译，有编译时编织（特殊编译器实现）、类加载时编织（特殊的类加载器实现）。
 - 动态代理：运行时在内存中“临时”生成AOP动态代理，有JDK动态代理（需实现至少一个接口，只能为接口方法提供增强）、CGLIB动态代理（使用继承方式实现，类不能被final修饰）
+
 #### Aspect使用流程
  __声明 point cut__ ，一个 point cut 由两部分组成：
 - 一个方法签名
@@ -142,6 +144,7 @@ __声明 advice__ ，常用的advice类型有：
 - 一致性（consistence）：在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的数据必须完全符合所有的预设约束、触发器、级联回滚等。
 - 隔离性（isolation）：数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化。
 - 持久性（durability）：事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。
+
 #### 事务的隔离级别
 不同数据库对事务隔离级别的支持和实现略有不同，在 TransactionDefinition 接口中定义如下:
 
