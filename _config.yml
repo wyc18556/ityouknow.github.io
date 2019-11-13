@@ -103,8 +103,8 @@ labels:
     href: /docker.html
     name: Docker
 
-  - href: /life.html
-    name: 故事
+  - href: /other.html
+    name: 杂谈
 
 # selected articles
 classes:
