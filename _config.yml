@@ -61,20 +61,24 @@ navs:
     label: Home
 
   -
-    href: /spring-boot.html
-    label: Spring-Boot
+    href: /spring.html
+    label: Spring
 
   -
-    href: /spring-cloud.html
-    label: Spring-Cloud
+    href: /java.html
+    label: Java
+
+  -
+    href: /algorithms.html
+    label: Algorithms
 
   -
     href: /archives.html
     label: Archives
 
-  -
-    href: /link.html
-    label: Link
+#  -
+#    href: /link.html
+#    label: Link
 
   -
     href: /about.html
@@ -85,32 +89,30 @@ navs:
 labels:
 
   -
-    href: /life.html
-    name: 故事
-    
-  -
     href: /jvm.html
     name: Jvm
+
+  - href: /mysql.html
+    name: MySql
 
   -
     href: /nosql.html
     name: NoSql
 
   -
-    href: /mysql.html
-    name: MySql
+    href: /docker.html
+    name: Docker
 
-  -
-    href: /code.html
-    name: Code
+  - href: /life.html
+    name: 故事
 
 # selected articles
 classes:
 
   -
-    href: /life.html
-    name: 我的故事
-    describe: 生活就是故事，故事就是生活
+    href: /note.html
+    name: 读书笔记
+    describe: 好记性不如烂笔头
 
   -
     href: /greater.html

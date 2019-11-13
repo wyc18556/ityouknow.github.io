@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Spring事务的传播机制
-category: springboot
-tags: [springboot]
+category: spring
+tags: [spring]
 no-post-nav: true
 ---
 
