@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Spring事务的传播机制
-category: spring
+category: framework
 tags: [spring]
+keywords: spring
 no-post-nav: true
 ---
 

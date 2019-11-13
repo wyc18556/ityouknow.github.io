@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 框架相关笔记
-category: base
+category: node
 tags: [base]
 no-post-nav: true
 ---

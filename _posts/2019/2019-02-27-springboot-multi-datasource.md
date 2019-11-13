@@ -1,8 +1,9 @@
 ---
 layout: post
 title: mybatis整合spring-boot配置多数据源
-category: spring
+category: framework
 tags: [mybatis,spring-boot]
+keywords: spring
 no-post-nav: true
 ---
 

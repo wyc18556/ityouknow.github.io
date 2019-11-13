@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 并发编程之美笔记
-category: base
-tags: [base]
+category: node
+tags: [concurrent]
 no-post-nav: true
 ---
 

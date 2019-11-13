@@ -6,7 +6,6 @@ subtitle: <span class="mega-octicon octicon-gear"></span>&nbsp;&nbsp; Springç›¸å
 menu: spring
 css: ['blog-page.css']
 permalink: /spring
-keywords: Spring, Spring Boot, Spring Cloud
 ---
 
 {% include spring.html %}

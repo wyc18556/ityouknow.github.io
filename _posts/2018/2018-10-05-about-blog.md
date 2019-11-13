@@ -2,7 +2,7 @@
 layout: post
 title: 关于此博客
 category: life
-tags: [life]
+tags: [introduction]
 no-post-nav: true
 ---
 

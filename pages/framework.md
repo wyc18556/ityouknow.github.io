@@ -2,7 +2,7 @@
 layout: page
 title: 框架学习系列
 titlebar: framework
-subtitle: <span class="mega-octicon octicon-light-bulb"></span>&nbsp;&nbsp; spring全家桶，dubbo等
+subtitle: <span class="mega-octicon octicon-light-bulb"></span>&nbsp;&nbsp; spring全家桶，mybatis，netty等
 menu: framework
 css: ['blog-page.css']
 permalink: /framework
