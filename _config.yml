@@ -115,9 +115,9 @@ classes:
     describe: 好记性不如烂笔头
 
   -
-    href: /greater.html
-    name: 进阶之路
-    describe: 一个Java Coder的学习与分享
+    href: /framework.html
+    name: 框架相关
+    describe: 常见框架的学习和使用
 
   -
     href: /jvm.html
