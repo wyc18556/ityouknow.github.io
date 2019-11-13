@@ -6,7 +6,6 @@ subtitle: <span class="mega-octicon octicon-flame"></span>&nbsp;&nbsp; Docker �
 menu: docker
 css: ['blog-page.css']
 permalink: /docker
-keywords: Docker,DockerFile,Swarm,docker-machine,MCompose,Docker 学习,服务编排
 ---
 
 {% include docker.html %}
