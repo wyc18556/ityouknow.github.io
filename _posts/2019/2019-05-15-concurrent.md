@@ -1,13 +1,15 @@
 ---
 layout: post
-title: JDK场景并发操作类
+title: JDK常见并发操作类
 category: note
 tags: [concurrent]
 no-post-nav: true
 ---
 
 ## 使用Unsafe类实现CAS操作
+
 Unsafe类为一单例实现，提供静态方法getUnsafe获取Unsafe实例，当且仅当调用getUnsafe方法的类为引导类加载器所加载时才合法，否则抛出SecurityException异常。
+
 ### 如何获取实例
 其一，从getUnsafe方法的使用限制条件出发，通过Java命令行命令-Xbootclasspath/a把调用Unsafe相关方法的类A所在jar包路径追加到默认的bootstrap路径中，使得A被引导类加载器加载，从而通过Unsafe.getUnsafe方法安全的获取Unsafe实例。
 ```
