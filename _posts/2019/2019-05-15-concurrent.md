@@ -49,10 +49,9 @@ JUC包内包含AtomicInteger、AtomicLong和AtomicBoolean等原子性操作类�
 
 > Cell数组如何扩容？当cells数组的元素个数小于当前机器的CPU个数并且当前多个线程访问了cells中同一个元素，从而导致冲突使其中一个线程CAS失败时才会进行扩容操作。通过CAS操作设置cellsBusy为1，创建容量为原容量2倍的新数组，并复制Cell元素到扩容后的数组。
 
+## JUC中LockSupport工具类
+> 它的主要作用是挂起和唤醒线程。LockSupport类与每一个使用它的线程都会关联一个许可证，在默认情况下线程是不持有许可证的。LockSupport.park()方法在有许可证的情况下直接返回，而没有许可证则会被挂起，直至获取到许可证才会返回，可以通过LockSupport.unPark(Thread thread)给指定线程发放许可证。另外，调用该阻塞线程的interrupt()方法，设置了中断标志或者线程被虚假唤醒park方法也会正常返回。此处的中断操作不同于中断sleep和join方法，不会抛出InterruptedException异常。
+
 ## JUC内并发List 
 ### CopyOnWriteArrayList
 > CopyOnWriteArrayList是一个线程安全的ArrayList，对其进行的修改操作都是在底层的一个复制的数组（快照）上进行的，也就是使用了写时复制策略。每一个CopyOnWriteArrayList对象里面有一个array数组对象用来存放具体的元素，ReentrantLock独占锁对象用来保证同时只有一个线程对array进行修改。由于使用了写时复制策略，高并发场景下就会出现弱一致性问题，由CopyOnWriteArrayList创建的迭代器也是弱一致性的，即获取迭代器后，其他线程对原list的增删改对原迭代器是不可见的。
- 
-## JUC中锁原理剖析
-### LockSupport工具类
-> 它的主要作用是挂起和唤醒线程。LockSupport类与每一个使用它的线程都会关联一个许可证，在默认情况下线程是不持有许可证的。LockSupport.park()方法在有许可证的情况下直接返回，而没有许可证则会被挂起，直至获取到许可证才会返回，可以通过LockSupport.unPark(Thread thread)给指定线程发放许可证。另外，调用该阻塞线程的interrupt()方法，设置了中断标志或者线程被虚假唤醒park方法也会正常返回。此处的中断操作不同于中断sleep和join方法，不会抛出InterruptedException异常。

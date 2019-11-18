@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 并发编程
+title: 线程安全问题
 category: note
 tags: [concurrent]
 no-post-nav: true
