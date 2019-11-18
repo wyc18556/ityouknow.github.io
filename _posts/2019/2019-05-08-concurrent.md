@@ -7,6 +7,7 @@ no-post-nav: true
 ---
 
 ## Thread类及Object类相关方法
+
 ### 创建线程
 - 继承Thread类，重写run方法；   
 - 实现Runnable接口的run方法；

@@ -6,7 +6,6 @@ tags: [concurrent]
 no-post-nav: true
 ---
 
-## 类图结构及介绍
 LinkedBlockingQueue的内部是通过单向链表实现的，使用头(head)、尾(last)节点来进行出队和入队操作。出队是通过一个ReentrantLock实例(takeLock)来控制同时只能有一个线程可以从队列头部获取元素，入队通过另一个ReentrantLock实例(putLock)来控制同时只能有一个线程可以从队尾插入元素。同时内部还维护了一个初始值为0的原子变量(AtomicInteger)count，用来记录队列元素的个数，同时通过capacity记录队列的容量。另外还包含两个条件变量notEmpty和notFull，notEmpty对应的条件队列用来存放因执行出队(take)操作但队列为空而被阻塞的线程，notFull对应的条件队列用来存放因执行入队(put)操作但队列已满而被阻塞的线程，以此实现了一个生产消费模型。类图结构如下:
 
 ![LinkedBlockingQueue类图](http://image.wyc1856.club/2019-08-21-15-22-30.png)

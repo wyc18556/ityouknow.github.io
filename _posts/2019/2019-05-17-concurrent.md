@@ -6,7 +6,6 @@ tags: [concurrent]
 no-post-nav: true
 ---
 
-## 类图结构及介绍
 AbstractQueuedSynchronizer抽象同步队列简称AQS，它是实现同步器的基础组件，并发包中锁的底层就是使用AQS实现的。
 
 ![AQS类图](http://image.wyc1856.club/2019-07-31-14-12-41.png)

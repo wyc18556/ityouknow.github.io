@@ -6,7 +6,6 @@ tags: [concurrent]
 no-post-nav: true
 ---
 
-## 类图结构及介绍
 读多写少的场景下，ReentrantLock就有点力不从心了，所以ReentrantReadWriteLock应运而生。ReentrantReadWriteLock采用读写分离的策略，允许多个线程同时获取读锁。内部维护了一个ReadLock和一个WriteLock，它们依赖Sync实现具体的功能。而Sync类继承自AQS，并且也提供了公平和非公平的实现。ReentrantReadWriteLock通过state的高16位表示读状态，也就是获取到读锁的次数；低16位表示获取到写锁的可重入次数。类图结构如下:
 
 ![ReentrantReadWriteLock类图](http://image.wyc1856.club/2019-08-01-09-53-53.png)
