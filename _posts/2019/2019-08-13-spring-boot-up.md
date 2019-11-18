@@ -3,7 +3,7 @@ layout: post
 title: Spring Boot启动流程
 category: note
 tags: [spring boot]
-keywords: [spring]
+keywords: spring
 no-post-nav: true
 ---
 
