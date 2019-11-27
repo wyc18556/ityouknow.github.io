@@ -39,7 +39,7 @@ no-post-nav: true
 
 ## leetcode练习题
 题号|代码实现
-:-:|:-:|:-:|:-:|:-:|:-:
+:-:|:-:
 206|[单链表反转](https://github.com/wyc18556/algorithms/blob/master/src/leetcode/easy/ReverseList.java)
 141|[链表中环的检测](https://github.com/wyc18556/algorithms/blob/master/src/leetcode/easy/CycleList.java)
 21|[合并两个有序链表](https://github.com/wyc18556/algorithms/blob/master/src/leetcode/easy/MergeList.java)
