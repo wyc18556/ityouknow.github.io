@@ -9,6 +9,7 @@ no-post-nav: true
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
+## 什么是二分查找
 二分查找是一种非常简单易懂的快速查找算法，针对一个**有序**的数据集合，查找思想类似分治的思想。每次都是通过和中间元素的比较，将待查找区间缩小为之前的一半，直至找到目标元素或待查找区间被缩小为0。
 
 ## 复杂度分析
