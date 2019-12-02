@@ -8,14 +8,14 @@ no-post-nav: true
 
 ## 什么是浅拷贝和深拷贝
 ## 浅拷贝
-浅拷贝是指我们拷贝出来的对象内部的引用类型变量和原来对象内部引用类型变量是同一引用（指向同一对象），即修改拷贝对象内部引用类型变量值会同步修改原对象内部对应引用类型变量的值。   
+浅拷贝是指我们拷贝出来的对象内部的引用类型变量和原来对象内部引用类型变量是同一引用（指向同一一块内存地址），即修改拷贝对象内部引用类型成员变量值会同步修改原对象内部对应引用类型成员变量的值。   
 简单来说，新（拷贝产生）、旧（原对象）对象不同，但是内部如果有引用类型的变量，新、旧对象引用类型属性的引用指向的都是同一块内存地址。
 
 ## 深拷贝
 深拷贝是指全部拷贝原对象的内容，包括内部的引用类型也进行拷贝。新、旧对象完全没有联系。
 
 ## Object类clone方法是浅拷贝还是深拷贝
-我们都知道Object类的clone方法是一个native方法，该方法通过protected修饰，必须得通过子类重写该方法，并且调整访问修饰符为public方能通过实例对象在需要拷贝对象的地方使用。除此之外，使用clone方法的类必须实现Cloneable接口，重写clone方法，否则将会抛出CloneNotSupportedException异常。通过下面的代码测试Object类clone方法是什么拷贝。
+我们都知道Object类的clone方法是一个native方法，该方法通过protected修饰，必须得通过子类重写该方法，并且调整访问修饰符为public方能通过实例对象在需要拷贝对象的地方使用。除此之外，重写clone方法的类必须实现Cloneable接口，否则将会抛出CloneNotSupportedException异常。通过下面的代码测试Object类clone方法是什么拷贝。
 ```java
 public class Student implements Cloneable {
 
@@ -82,7 +82,7 @@ age:20, name:wyc1856, scores:[59, 80, 70]
 age:20, name:wyc1856, scores:[60, 80, 70]
 ```
 
-通过输出结果scores的第一个元素从59->60可以看出来Object类的clone方法是浅拷贝，如果你debug也会发现克隆对象clone内的age和scores的引用和原对象student内对应属性的应用相同，我debug的截图如下：
+通过输出结果scores的第一个元素从59->60可以看出来Object类的clone方法是浅拷贝，如果你debug也会发现克隆对象clone内的age和scores的引用和原对象student内对应属性的引用相同，debug的截图如下：
 ![2019-12-02-21-31-30](http://image.wyc1856.club/2019-12-02-21-31-30.png)
 你可能就有疑问了，change方法也更新了age和name，为啥它俩却没变呢？因为age是Integer类型，在进行age++操作的时候先拆箱，再进行+1操作，最后进行装箱的时候会重新生成一个Integer对象。至于name为啥没变是因为String类型是不可变类，每次对String对象的修改都会指向一个新的内存空间，至于String为啥设计成不可变的，可以看看[这篇文章](https://juejin.im/post/59cef72b518825276f49fe40)。
 
@@ -127,5 +127,5 @@ public static <T extends Serializable> T clone(T obj) {
     }
 ```
 
-### 3.通过json序列化
+### 3.通过json序列化和反序列化
 其实思想还是先进行序列化，然后在进行反序列化生产新对象，只是序列化方式变成json字符串了。可依赖第三方json序列化类库实现，例如jackson、gson、fastjson等。
