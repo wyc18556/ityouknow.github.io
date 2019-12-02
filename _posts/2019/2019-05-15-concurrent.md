@@ -17,7 +17,7 @@ java -Xbootclasspath/a: ${path}   // 其中path为调用Unsafe相关方法的类
 ```
 其二，通过反射获取单例对象theUnsafe。
 ```
-private static Unsafe reflectGetUnsafe() {
+public static Unsafe reflectGetUnsafe() {
     try {
       Field field = Unsafe.class.getDeclaredField("theUnsafe");
       field.setAccessible(true);
