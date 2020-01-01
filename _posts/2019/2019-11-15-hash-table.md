@@ -6,9 +6,9 @@ keywords: hash
 no-post-nav: true
 ---
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 散列表的英文名叫 HashTable，我们平时也叫它哈希表。散列表用的是数组支持按照下标进行随机访问的特性，所以散列表其实就是数组的一种扩展，由数组演化而来。
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 ## 散列函数
 顾名思义，它是一个函数。我们可以把它定义为hash(key)，其中key表示元素的键值，hash(key)值表示经过散列函数计算得到的散列值。
