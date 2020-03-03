@@ -2,7 +2,7 @@
 layout: post
 title: 数据结构与算法之美-散列表
 category: note
-keywords: hash
+keywords: algorithm
 no-post-nav: true
 ---
 

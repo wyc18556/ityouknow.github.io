@@ -2,7 +2,7 @@
 layout: post
 title: 数据结构与算法之美-二叉树
 category: note
-keywords: hash
+keywords: algorithm
 no-post-nav: true
 ---
 
