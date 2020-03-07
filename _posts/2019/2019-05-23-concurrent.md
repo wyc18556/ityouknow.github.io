@@ -11,7 +11,7 @@ ConcurrentLinkedQueue内部使用单向链表数据结构来保存队列元素�
 ![ConcurrentLinkedQueue类图](http://image.wyc1856.club/2019-08-21-15-23-31.png)
 
 ## 常用方法及操作
-- offer(E e)操作是在队尾添加一个元素，如果传入的参数是null则抛出NPE异常，否则由于ConcurrentLinkedQueue是无界队列，该方法一直会返回true。
+- offer(E e)操作是在队尾添加一个元素，如果传入的参数是null则抛出NPE异常，否则由于ConcurrentLinkedQueue是无界队列，该方法一直会返回true，cas失败会自旋重试。
 - add(E e)操作其实在内部调用的还是offer操作，实现的功能和offer操作一样。
 - poll()操作是在队列头部获取并移除一个元素，如果队列为空则返回null。
 - peek()操作是获取队列头部一个元素（只获取不移除），如果队列为空则返回null。

@@ -18,3 +18,6 @@ LinkedBlockingQueue的内部是通过单向链表实现的，使用头(head)、�
 - take()操作和poll操作类似，都是获取队头元素并将其从队列中移除。但是take操作通过takeLock.lockInterruptibly()方法获取锁，表示对中断响应。并且当队列为空时会调用notEmpty.await()阻塞当前线程，加入到notEmpty对应的条件队列中。
 - remove(Object o)操作用来删除队列中指定的元素，首先进行双重加锁，然后遍历队列直到找到指定的元素，删除该元素并返回true，遍历结束都没找到该元素则返回false，最后释放双重锁，释放锁的顺序和加锁顺序相反。
 - size()操作返回当前队列的元素个数，直接返回count.get()即可。
+
+## 小结
+![2020-03-06-17-44-58](http://image.wyc1856.club/2020-03-06-17-44-58.png)

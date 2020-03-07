@@ -13,13 +13,16 @@ no-post-nav: true
 - 实现Runnable接口的run方法；
 - 实现Callable接口的call方法，然后构建FutureTask实例，再封装成Thread对象，线程start()后通过futureTask.get()获取返回值；
 
+### Thead 类 run 方法和 start 方法的区别
+start 方法是启动一个新的线程，执行完后线程处于就绪状态，等待 cpu 调度才会在新线程内执行 run 方法的逻辑。而直接调用 run 方法就是相当于普通调用 thread 对象的 run 方法，还是在当前线程内执行的
+
 ### 线程的通知与等待
-> wait()系列：首先获取共享变量(resource)的监视器锁(synchronized)，调用共享变量上wait()系列方法挂起当前线程，释放监视器锁，进入resource下的线程阻塞队列。
+> wait()系列：首先获取共享变量(resource)的监视器锁(synchronized)，调用共享变量上wait()系列方法挂起当前线程，释放监视器锁，进入resource下的线程阻塞队列。阻塞挂起期间如果其他线程调用了本线程的interrput()方法试图中断阻塞时，当前线程会在调用resource.wait()方法的地方抛出InterruptedException异常而返回。
 
 > notify()&notifyAll()：唤醒（进入就绪状态，重新竞争监视器锁及CPU调度）因调用wait()系列方法而阻塞的线程，该方法和wait()系列方法一样，都需要在获取到监视器锁的前提下调用，否则会抛出IllegalMonitorStateException异常。一个需要注意的地方是，在共享变量上调用notifyAll()方法只会唤醒调用这个方法 __之前__ 调用了wait()系列函数而被放入共享变量等待集合里面的线程。
 
 ### 等待线程执行终止
-> join()方法，线程A调用了线程B的join方法，线程A会被阻塞，直到线程B执行完毕后线程A才能执行后续的逻辑。注意一点，当线程A阻塞时，其他线程调用线程A的interrupt()方法试图中断线程A时，线程A会抛出InterruptedException异常而返回。
+> join()方法，线程A调用了线程B的join方法，线程A会被阻塞，直到线程B执行完毕后线程A才能执行后续的逻辑。注意一点，当线程A阻塞时，其他线程调用线程A的interrupt()方法试图中断线程A时，线程A会在调用线程B的join方法处抛出InterruptedException异常而返回。
 
 ### 让线程睡眠
 > sleep(milliseconds)方法会让当前线程进入睡眠状态（不参与CPU的调度，但是并不会释放所占用的监视器资源）,当睡眠时间到后，该线程会进入就绪状态，重新参与CPU的调度。睡眠期间不能通过其他线程调用本线程的interrupt()方法试图中断线程，本线程会在调用sleep方法的地方抛出InterruptedException异常。

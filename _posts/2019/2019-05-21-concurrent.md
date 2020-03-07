@@ -40,7 +40,7 @@ static int exclusiveCount(int c) { return c & EXCLUSIVE_MASK; }
 
 ## 读锁的获取与释放(非公平策略)
 > void lock()方法
->> 首先判断当前是否有其他线程获取了写锁(exclusiveCount(state) != 0 && getExclusiveOwnerThread() != current)，直接返回-1。然后调用AQS的doAccquired方法把当前线程放入AQS阻塞队列。如果当前线程已经获取了写锁，则也能继续获取读锁。但是要注意，读锁处理事情完毕后，要记得把读锁和写锁都释放掉，不能只释放写锁（没明白为啥要这样做）。如果当前没有线程获取写锁(exclusiveCount(state) == 0)，则计算出读锁计数(r = sharedCount(state))，然后尝试获取锁(逻辑比较复杂，暂时先这样吧)。
+>> 首先判断当前是否有其他线程获取了写锁(exclusiveCount(state) != 0 && getExclusiveOwnerThread() != current)，直接返回-1。然后调用AQS的doAccquireShared方法把当前线程放入AQS阻塞队列。如果当前线程已经获取了写锁，则也能继续获取读锁。但是要注意，读锁处理事情完毕后，要记得把读锁和写锁都释放掉，不能只释放写锁（没明白为啥要这样做）。如果当前没有线程获取写锁(exclusiveCount(state) == 0)，则计算出读锁计数(r = sharedCount(state))，然后尝试获取锁(逻辑比较复杂，暂时先这样吧)。
 
 > boolean tryLock()
 >> 尝试获取读锁，逻辑和lock()类似，区别是未获取到锁线程并不会阻塞。
