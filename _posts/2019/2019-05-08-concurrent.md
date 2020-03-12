@@ -44,6 +44,6 @@ start 方法是启动一个新的线程，执行完后线程处于就绪状态�
 > 用户线程：例如main线程，JVM进程只有在最后一个非守护线程执行结束后才会结束。线程可以通过setDaemon(boolean)方法设置是否为守护线程。
 
 ## ThreadLocal和InheritableThreadLocal
-> ThreadLocal：在每一个线程内部都有一个名为threadLocals的成员变量，该变量类型为HashMap，其中key为我们定义的ThreadLocal变量的this引用，value则为我们使用set方法设置的值。具体的介绍可阅读[这篇文章](https://mp.weixin.qq.com/s/K-8aNF3gqg3ekrRbTsjo9w)
+> ThreadLocal：在每一个线程内部都有一个名为threadLocals的成员变量，该变量类型为ThreadLocalMap，内部维护了一个Entry数组，默认容量为16。通过ThreadLocal的threadLocalHashCode定位数组下表，其中Entry的value就是threadLocal.set方法里设置的值。具体的介绍可阅读[这篇文章](https://mp.weixin.qq.com/s/K-8aNF3gqg3ekrRbTsjo9w)
 
 > InheritableThreadLocal：我们知道ThreadLocal变量在父线程中设置好后，在子线程中是获取不到的。但是使用InheritableThreadLocal就可以让子线程访问到在父线程中设置的本地变量。同样，在每一个线程内部都有一个名为inheritableThreadLocals的成员变量。创建子线程时会判断父线程的inheritableThreadLocals是否为空，不为空则复制一份到子线程的inheritableThreadLocals中。InheritableThreadLocal继承ThreadLocal，重写了getMap(args)和createMap(args)方法来针对当前线程的inheritableThreadLocals进行操作。
