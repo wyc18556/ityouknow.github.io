@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Spring Boot 基础
+category: framework
 tags: [spring boot]
 keywords: spring
 no-post-nav: true
