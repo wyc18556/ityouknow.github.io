@@ -1,14 +1,62 @@
 ---
 layout: post
-title: Spring Boot启动流程
-category: note
+title: Spring Boot 基础
 tags: [spring boot]
 keywords: spring
 no-post-nav: true
 ---
 
 Spring Boot 项目可通过将@SpringBootApplication标注的类作为primarySource传入SpringApplication.run(primarySource, args)方法并执行该方法的方式启动。
-近日梳理了一下和启动流程相关的知识，故在此记录一下。
+近日梳理了相关的知识，故在此记录一下。
+
+## 核心功能及优点:
+- 以java -jar的方式启动，独立运行，使【部署】变简单
+- 内嵌servlet容器（引入spring-boot-starter-web），使【部署】变简单
+- 提供start简化maven配置，使【配置】变简单
+- 自动配置Spring Bean，使【配置】变简单
+- 准生产的应用监控（acturator），使【监控】变简单
+
+## Spring Boot、Spring MVC 和 Spring 有什么区别？
+Spring指的是一个生态，它包含很多项目，比如Spring IOC、Spring AOP、Spring Secutity等，SpringMVC就是Spring众多框架中的一个，而Spring Boot是构建在Spring Framework之上的Boot启动器，旨在更容易的配置一个Spring项目。
+
+## 如何统一引入 Spring Boot 版本？
+- 继承 spring-boot-starter-parent 项目。配置代码如下：
+
+```sh
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.1.RELEASE</version>
+</parent>
+```
+
+- 导入 spring-boot-dependencies 项目依赖。配置代码如下：
+
+```sh
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>1.5.1.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+## 配置文件格式
+- .properties格式，spring项目中最常见的配置文件格式。
+- .yaml格式，可读性更强，分层结构更明显，不支持@ProperSource注解读取，可通过@Value注解替代。
+
+Spring Boot默认的配置文件为根目录下的application配置文件。
+创建application-{profile}.yml文件 存放不同环境特有的配置，在application主配置文件通过spring.profiles.active=xxx指定加载不同的环境配置。
+
+## Spring Boot 有哪些配置方式
+- 传统的XML配置文件
+- 注解的方式，类似@Service、@Component等
+- Java Config的方式，使用@Configuration声明配置类，通过@Bean注解的公共方法声明bean。
 
 ## Spring Boot的核心注解
 @SpringBootApplication是一个组合注解，包含的主要注解包括：
@@ -47,3 +95,10 @@ Spring Boot 项目可通过将@SpringBootApplication标注的类作为primarySou
 
 SpringApplicationRunListeners的部分方法会循环调用SpringApplicationRunListener中对应的方法，然后通过实现类EventPublishingRunListener调用SimpleApplicationEventMulticaster进行事件广播，
 通过事件类型找到对应的事件监听器实现监听逻辑(还可以启动异步task Executor来实现异步调用);
+
+## Spring Boot2.0的新特性及主要改动
+- 起步JDK8和支持JDK9
+- 默认数据库连接池由Tomcat改成HikariCP
+- 默认redis客户端有Jedis改成Lettuce
+- 建立在Spring Framework 5之上，支持响应式编程(reactive)
+- HTTP/2的支持
